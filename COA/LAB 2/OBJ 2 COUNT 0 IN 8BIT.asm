@@ -1,0 +1,12 @@
+MOV SI,2000H
+MOV AL,[SI]
+MOV CL,08H
+MOV CH,00H
+L2: SHR AL,O1H
+    JC L1
+    INC CH
+L1: DEC CL
+    JNC L2
+    INC SI
+    MOV[SI],CH
+    HLT
